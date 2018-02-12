@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alu.cs" />
+    <Compile Include="ConsoleDisplay.cs" />
     <Compile Include="Cpu.cs" />
     <Compile Include="Instruction.cs" />
     <Compile Include="Point.cs" />

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace cpuEm
 {
@@ -7,35 +6,20 @@ namespace cpuEm
 	{
 		static void Main(string[] args)
 		{
-			var values = new List<ValueDisplay>
-			{
-				new ValueDisplay
-				{
-					Location = new Point {columnNum = 0, rowNum = 0},
-					Name = "Test",
-					Value = "Value"
-					
-				},
-				new ValueDisplay
-				{
-					Location = new Point {columnNum = 10, rowNum = 10},
-					Name = "Test",
-					Value = "Value"
-				},
-				new ValueDisplay
-				{
-					Location = new Point {columnNum = 0, rowNum = 2},
-					Name = "Testtttttttt",
-					Value = "Value"
-				},
-			};
+			var data = "abcdefghijklmnopqrstuvwxyz.,/\\!@#$%^&*()";
 
-			foreach (var valueDisplay in values)
+			var console = new ConsoleDisplay(new Point(3, 4), 6, 6);
+
+			while (true)
 			{
-				valueDisplay.Print();
+				foreach (var c in data)
+				{
+					System.Threading.Thread.Sleep(100);
+					console.AddAscii(Convert.ToInt32(c));
+					console.Print();
+				}
 			}
 
-			Console.ReadLine();
 		}
 	}
 }
