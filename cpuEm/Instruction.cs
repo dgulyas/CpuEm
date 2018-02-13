@@ -14,6 +14,8 @@ namespace cpuEm
 		//24-27 Function. The operation the alu should perform on the arguments.
 		//28    Load from keyboard or alu result.
 
+		public string Binary;
+
 		public int Literal;
 		public int DestReg;
 		public int NewPcValue;
@@ -21,9 +23,12 @@ namespace cpuEm
 		public int RegA;
 		public int Function;
 		public int KeybOrAlu;
+
+		public int BinaryWidth = 29; //29 binary digits
 		
 		public Instruction(string binary)
 		{
+			Binary = binary;
 			Literal = Convert.ToInt32(binary.Substring(0, 8));
 			DestReg = Convert.ToInt32(binary.Substring(8, 4));
 			NewPcValue = Convert.ToInt32(binary.Substring(12, 4));

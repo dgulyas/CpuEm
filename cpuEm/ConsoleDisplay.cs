@@ -12,7 +12,7 @@ namespace cpuEm
 		public List<char[]> Text;
 
 		private readonly Point m_cursorPos = new Point {columnNum = -1, rowNum = 0};
-		private char blankChar = ' ';
+		private char blankChar = '#';
 
 		public ConsoleDisplay(Point location, int height, int width)
 		{
@@ -41,16 +41,26 @@ namespace cpuEm
 
 		public void Print()
 		{
+			Console.SetCursorPosition(Location.columnNum, Location.rowNum);
+			Console.Write(GetLineArray(Width + 2, '-'));
+
 			for (var row = 0; row < Height; row++)
 			{
-				Console.SetCursorPosition(Location.columnNum, Location.rowNum + row);
-				Console.Write(new string(Text[row]));
+				Console.SetCursorPosition(Location.columnNum, Location.rowNum + row + 1);
+				Console.Write("|" + new string(Text[row]) + "|");
 			}
+
+			Console.SetCursorPosition(Location.columnNum, Location.rowNum + Height + 1);
+			Console.Write(GetLineArray(Width + 2, '-'));
 		}
 
-		private char[] GetLineArray(int length)
+		private char[] GetLineArray(int length, char character = '\0')
 		{
-			return Enumerable.Repeat(blankChar, length).ToArray();
+			if (character == '\0')
+			{
+				character = blankChar;
+			}
+			return Enumerable.Repeat(character, length).ToArray();
 		}
 
 		/// <summary>
