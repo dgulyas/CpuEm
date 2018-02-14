@@ -21,7 +21,7 @@ namespace cpuEm
 			Console.SetCursorPosition(Location.columnNum, currentRow++);
 			Console.Write($"|{Instruct.Binary}|");
 			Console.SetCursorPosition(Location.columnNum, currentRow++);
-			Console.Write("|decimal values go here       |");
+			Console.Write("|decimal values go here       |"); //TODO: Add dec values
 			Console.SetCursorPosition(Location.columnNum, currentRow);
 			Console.Write(m_horizontalBorder);
 		}

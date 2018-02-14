@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace cpuEm
 {
@@ -6,30 +8,26 @@ namespace cpuEm
 	{
 		static void Main(string[] args)
 		{
+			//TODO: Add argument parsing to read in a program from file.
+			var cpu = new Cpu();
+			//cpu.LoadProgram();
 			var cpuDisplay = new CpuDisplay();
-			cpuDisplay.Print();
+			cpuDisplay.Print(cpu);
 			Console.ReadLine();
+		}
 
-			var binary = "10101010101010101010101010101";
-			var instruct = new Instruction(binary);
-			var instDisplay = new InstructDisplay {Location = new Point(0, 0)};
-			instDisplay.SetInstruction(instruct);
-			instDisplay.Print();
-
-			var data = "abcdefghijklmnopqrstuvwxyz.,/\\!@#$%^&*()";
-
-			var console = new ConsoleDisplay(new Point(3, 4), 6, 6);
-
-			while (true)
+		public static List<string> HexToBinary(List<string> hexProgram)
+		{
+			var binaryProgram = new List<string>();
+			foreach (var hexInstruction in hexProgram)
 			{
-				foreach (var c in data)
-				{
-					System.Threading.Thread.Sleep(100);
-					console.AddAscii(Convert.ToInt32(c));
-					console.Print();
-				}
+				string binaryString = String.Join(String.Empty,
+					hexInstruction.Select(c => Convert.ToString(Convert.ToInt32(c.ToString(), 16), 2).PadLeft(4, '0')));
+				binaryProgram.Add(binaryString);
 			}
 
+			return binaryProgram;
 		}
+
 	}
 }

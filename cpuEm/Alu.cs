@@ -18,10 +18,10 @@ namespace cpuEm
 					return arg1;
 				case 4:
 					//and
-					throw new Exception($"Operation And (num 4) is not supported");
+					throw new Exception("Operation And (num 4) is not supported");
 				case 5:
 					//or
-					throw new Exception($"Operation Or (num 5) is not supported");
+					throw new Exception("Operation Or (num 5) is not supported");
 				case 6:
 					//boolean inverter
 					return arg1 == 0 ? 1 : 0; 
