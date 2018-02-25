@@ -37,5 +37,19 @@ namespace cpuEm
 			Function = Convert.ToInt32(binary.Substring(24, 4));
 			KeybOrAlu = Convert.ToInt32(binary.Substring(28, 1));
 		}
+
+		public Instruction() { }
+
+		public Instruction(int literal, int destReg, int newPcValue, int regA, int regB, int func, int kOrA)
+		{
+			Literal = literal;
+			DestReg = destReg;
+			NewPcValue = newPcValue;
+			RegA = regA;
+			RegB = regB;
+			Function = func;
+			KeybOrAlu = kOrA;
+		}
+
 	}
 }

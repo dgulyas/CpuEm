@@ -48,5 +48,22 @@ namespace cpuEm
 			}
 		}
 
+		public enum Ops
+		{
+			Add = 0,
+			Sub = 1,
+			Neg = 2,
+			PassThrough = 3,
+			And = 4,
+			Or = 5,
+			BoolInvert = 6,
+			GreaterThan = 7,
+			Equal = 8,
+			LessThan = 9,
+			JumpGreater = 10,
+			JumpEqual = 11,
+			LumpLess = 12
+		}
+
 	}
 }
