@@ -10,7 +10,7 @@ namespace cpuEm
 		{
 			//TODO: Add argument parsing to read in a program from file.
 			var cpu = new Cpu();
-			//cpu.LoadProgram();
+			cpu.LoadProgram( new List<string> { "00000111011001010100001100101" });
 			var cpuDisplay = new CpuDisplay();
 			cpuDisplay.Print(cpu);
 			Console.ReadLine();

@@ -21,11 +21,11 @@ namespace cpuEm
 			Console.SetCursorPosition(Location.columnNum, currentRow++);
 			Console.Write($"|{Instruct.Binary}|");
 			Console.SetCursorPosition(Location.columnNum, currentRow++);
-			Console.Write("|decimal values go here       |"); //TODO: Add dec values
+			Console.Write($"|{Instruct.GetDecLine()}|"); //TODO: Add dec values
 			Console.SetCursorPosition(Location.columnNum, currentRow);
 			Console.Write(m_horizontalBorder);
 		}
-		
+
 		private int m_width => Instruct.BinaryWidth + 2;
 		private string m_horizontalBorder => new string('-', m_width);
 	}

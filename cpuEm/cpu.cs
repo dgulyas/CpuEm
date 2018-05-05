@@ -61,6 +61,10 @@ namespace cpuEm
 
 		public Instruction GetCurrentInstruction()
 		{
+			if (Regs[PcReg] >= Instructions.Count)
+			{
+				return new Instruction(0,0,0,0,0,0,0);
+			}
 			return Instructions[Regs[PcReg]];
 		}
 
@@ -81,8 +85,8 @@ namespace cpuEm
 
 		public enum KBoardOrAlu
 		{
-			kBoard = 0,
-			alu = 1
+			KeyBoard = 0,
+			Alu = 1
 		}
 
 	}

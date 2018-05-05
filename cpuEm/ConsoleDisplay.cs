@@ -12,7 +12,7 @@ namespace cpuEm
 		public List<char[]> Text;
 
 		private readonly Point m_cursorPos = new Point {columnNum = -1, rowNum = 0};
-		private char blankChar = '#';
+		private char blankChar = ' ';
 
 		public ConsoleDisplay(Point location, int height, int width)
 		{

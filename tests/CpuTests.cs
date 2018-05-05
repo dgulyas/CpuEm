@@ -11,14 +11,14 @@ namespace tests
 		public void AdditionTest()
 		{
 			var cpu = new Cpu();
-			
+
 			var instruct = new Instruction
 			{
 				Function = (int)Alu.Ops.Add,
 				RegA = 0,
 				RegB = 1,
 				DestReg = 2,
-				KeybOrAlu = (int)Cpu.KBoardOrAlu.alu
+				KeybOrAlu = (int)Cpu.KBoardOrAlu.Alu
 			};
 
 			cpu.Regs[0] = 3;
@@ -40,7 +40,7 @@ namespace tests
 				Function = (int)Alu.Ops.PassThrough,
 				RegA = 5,
 				DestReg = Cpu.ConsoleReg,
-				KeybOrAlu = (int) Cpu.KBoardOrAlu.alu
+				KeybOrAlu = (int) Cpu.KBoardOrAlu.Alu
 			};
 
 			cpu.Regs[5] = 10;
