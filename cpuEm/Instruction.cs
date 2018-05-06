@@ -86,6 +86,11 @@ namespace cpuEm
 			return line;
 		}
 
+		public string GetDescriptionLine()
+		{
+			return "     lit Des rPC  rB  rA fun ";
+		}
+
 		private static string ToBinaryWithPadding(int num, int minWidth)
 		{
 			return Convert.ToString(num, 2).PadLeft(minWidth, '0');

@@ -21,7 +21,9 @@ namespace cpuEm
 			Console.SetCursorPosition(Location.columnNum, currentRow++);
 			Console.Write($"|{Instruct.Binary}|");
 			Console.SetCursorPosition(Location.columnNum, currentRow++);
-			Console.Write($"|{Instruct.GetDecLine()}|"); //TODO: Add dec values
+			Console.Write($"|{Instruct.GetDecLine()}|");
+			Console.SetCursorPosition(Location.columnNum, currentRow++);
+			Console.Write($"|{Instruct.GetDescriptionLine()}|");
 			Console.SetCursorPosition(Location.columnNum, currentRow);
 			Console.Write(m_horizontalBorder);
 		}

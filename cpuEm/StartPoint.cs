@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace cpuEm
 {
-	public class Program
+	public class StartPoint
 	{
 		static void Main(string[] args)
 		{
