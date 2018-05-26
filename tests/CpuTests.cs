@@ -48,7 +48,7 @@ namespace tests
 
 			cpu.Tick();
 
-			Assert.AreEqual(10, cpu.ConsoleBuffer.First());
+			Assert.AreEqual(10, cpu.ConsoleOutput.First());
 		}
 
 	}

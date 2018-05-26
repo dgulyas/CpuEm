@@ -1,0 +1,85 @@
+﻿<Window x:Class="CpuGui.CpuView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CpuGui"
+        mc:Ignorable="d"
+        Title="cpuEm" SizeToContent="WidthAndHeight">
+	<StackPanel Orientation="Horizontal">
+		<GroupBox Header="Registers">
+			<Grid Name="RegGrid">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="10" />
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="Auto" />
+				</Grid.ColumnDefinitions>
+				<!--Reg number labels -->
+				<Label Grid.Row="0" Grid.Column="0" Content="R0: "/>
+				<Label Grid.Row="0" Grid.Column="3" Content="R1: "/>
+				<Label Grid.Row="1" Grid.Column="0" Content="R2: "/>
+				<Label Grid.Row="1" Grid.Column="3" Content="R3: "/>
+				<Label Grid.Row="2" Grid.Column="0" Content="R4: "/>
+				<Label Grid.Row="2" Grid.Column="3" Content="R5: "/>
+				<Label Grid.Row="3" Grid.Column="0" Content="R6: "/>
+				<Label Grid.Row="3" Grid.Column="3" Content="R7: "/>
+				<Label Grid.Row="4" Grid.Column="0" Content="R8: "/>
+				<Label Grid.Row="4" Grid.Column="3" Content="R9: "/>
+				<Label Grid.Row="5" Grid.Column="0" Content="R10: "/>
+				<Label Grid.Row="5" Grid.Column="3" Content="R11: "/>
+				<Label Grid.Row="6" Grid.Column="0" Content="R12: "/>
+				<Label Grid.Row="6" Grid.Column="3" Content="R13: "/>
+				<Label Grid.Row="7" Grid.Column="0" Content="R14: "/>
+				<Label Grid.Row="7" Grid.Column="3" Content="R15: "/>
+
+				<!--reg value labels -->
+				<Label Grid.Row="0" Grid.Column="1" Content="000"/>
+				<Label Grid.Row="0" Grid.Column="4" Content="000"/>
+				<Label Grid.Row="1" Grid.Column="1" Content="000"/>
+				<Label Grid.Row="1" Grid.Column="4" Content="000"/>
+				<Label Grid.Row="2" Grid.Column="1" Content="000"/>
+				<Label Grid.Row="2" Grid.Column="4" Content="000"/>
+				<Label Grid.Row="3" Grid.Column="1" Content="000"/>
+				<Label Grid.Row="3" Grid.Column="4" Content="000"/>
+				<Label Grid.Row="4" Grid.Column="1" Content="000"/>
+				<Label Grid.Row="4" Grid.Column="4" Content="000"/>
+				<Label Grid.Row="5" Grid.Column="1" Content="000"/>
+				<Label Grid.Row="5" Grid.Column="4" Content="000"/>
+				<Label Grid.Row="6" Grid.Column="1" Content="000"/>
+				<Label Grid.Row="6" Grid.Column="4" Content="000"/>
+				<Label Grid.Row="7" Grid.Column="1" Content="000"/>
+				<Label Grid.Row="7" Grid.Column="4" Content="000"/>
+			</Grid>
+		</GroupBox>
+		<StackPanel>
+			<GroupBox Header="Instruction">
+				<StackPanel>
+					<TextBlock Margin="3" FontFamily="Courier New">11111111111111111111111111111</TextBlock>
+					<TextBlock Margin="3" FontFamily="Courier New">_______7___6___5___4___3___21</TextBlock>
+					<TextBlock Margin="3" FontFamily="Courier New">_____lit_des_rPC__rB__rA_fun_</TextBlock>
+				</StackPanel>
+			</GroupBox>
+			<GroupBox Header="Console Output">
+				<TextBox Name="ConsoleOut" Margin="3" IsReadOnly="True"/>
+			</GroupBox>
+			<GroupBox Header="Console Input">
+				<TextBox Name="MyTextBox" Margin="3"/>
+			</GroupBox>
+			<GroupBox Header="Clock">
+				<Button Content="Tick" Margin="3"></Button>
+			</GroupBox>
+		</StackPanel>
+	</StackPanel>
+</Window>

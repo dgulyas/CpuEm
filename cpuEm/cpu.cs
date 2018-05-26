@@ -7,7 +7,8 @@ namespace cpuEm
 	{
 		public List<int> Regs = new List<int>(16);
 		public List<Instruction> Instructions = new List<Instruction>();
-		public List<int> ConsoleBuffer = new List<int>();
+		public List<int> ConsoleOutput = new List<int>();
+		public List<int> ConsoleInput = new List<int>();
 
 		public readonly List<int> Ram = new List<int>();
 
@@ -53,7 +54,7 @@ namespace cpuEm
 
 			if (ci.DestReg == ConsoleReg) //write result to console
 			{
-				ConsoleBuffer.Add(Regs[ConsoleReg]);
+				ConsoleOutput.Add(Regs[ConsoleReg]);
 			}
 
 			//TODO: Don't have keyboard input yet.
@@ -78,8 +79,8 @@ namespace cpuEm
 
 		public int PopConsoleBuffer()
 		{
-			var value = ConsoleBuffer.First();
-			ConsoleBuffer.RemoveAt(0);
+			var value = ConsoleOutput.First();
+			ConsoleOutput.RemoveAt(0);
 			return value;
 		}
 

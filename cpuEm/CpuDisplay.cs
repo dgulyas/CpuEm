@@ -44,10 +44,10 @@ namespace cpuEm
 				m_regDisplays[regNum].SetValue(cpu.Regs[regNum]);
 			}
 
-			while (cpu.ConsoleBuffer.Count > 0)
+			while (cpu.ConsoleOutput.Count > 0)
 			{
-				m_console.AddAscii(cpu.ConsoleBuffer.ElementAt(0));
-				cpu.ConsoleBuffer.RemoveAt(0);
+				m_console.AddAscii(cpu.ConsoleOutput.ElementAt(0));
+				cpu.ConsoleOutput.RemoveAt(0);
 			}
 
 			m_instructDisplay.SetInstruction(cpu.GetCurrentInstruction());
