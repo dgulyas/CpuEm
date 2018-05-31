@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using NUnit.Framework;
-using cpuEm;
+using CpuProject;
 
 namespace tests
 {

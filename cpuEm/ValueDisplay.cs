@@ -21,7 +21,7 @@ namespace cpuEm
 			var currentRow = Location.rowNum;
 
 			Console.SetCursorPosition(Location.columnNum, currentRow++);
-			Console.Write(m_horizontalBorder);			
+			Console.Write(m_horizontalBorder);
 			Console.SetCursorPosition(Location.columnNum, currentRow++);
 			Console.Write($"|{Name.PadRight(m_actualNameWidth)}:{Value.PadRight(m_actualValueWidth)}|");
 			Console.SetCursorPosition(Location.columnNum, currentRow);

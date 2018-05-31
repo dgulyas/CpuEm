@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace cpuEm
+namespace CpuProject
 {
 	public static class Alu
 	{
@@ -24,7 +24,7 @@ namespace cpuEm
 					throw new Exception("Operation Or (num 5) is not supported");
 				case 6:
 					//boolean inverter
-					return arg1 == 0 ? 1 : 0; 
+					return arg1 == 0 ? 1 : 0;
 				case 7:
 					//greater than
 					return arg1 > arg2 ? 1 : 0;

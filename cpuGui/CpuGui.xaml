@@ -6,67 +6,19 @@
         xmlns:local="clr-namespace:CpuGui"
         mc:Ignorable="d"
         Title="cpuEm" SizeToContent="WidthAndHeight">
-	<StackPanel Orientation="Horizontal">
+	<StackPanel Orientation="Horizontal" DataContext="{Binding CpuModel}">
 		<GroupBox Header="Registers">
-			<Grid Name="RegGrid">
-				<Grid.RowDefinitions>
-					<RowDefinition Height="Auto" />
-					<RowDefinition Height="Auto" />
-					<RowDefinition Height="Auto" />
-					<RowDefinition Height="Auto" />
-					<RowDefinition Height="Auto" />
-					<RowDefinition Height="Auto" />
-					<RowDefinition Height="Auto" />
-					<RowDefinition Height="Auto" />
-				</Grid.RowDefinitions>
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="Auto" />
-					<ColumnDefinition Width="Auto" />
-					<ColumnDefinition Width="10" />
-					<ColumnDefinition Width="Auto" />
-					<ColumnDefinition Width="Auto" />
-				</Grid.ColumnDefinitions>
-				<!--Reg number labels -->
-				<Label Grid.Row="0" Grid.Column="0" Content="R0: "/>
-				<Label Grid.Row="0" Grid.Column="3" Content="R1: "/>
-				<Label Grid.Row="1" Grid.Column="0" Content="R2: "/>
-				<Label Grid.Row="1" Grid.Column="3" Content="R3: "/>
-				<Label Grid.Row="2" Grid.Column="0" Content="R4: "/>
-				<Label Grid.Row="2" Grid.Column="3" Content="R5: "/>
-				<Label Grid.Row="3" Grid.Column="0" Content="R6: "/>
-				<Label Grid.Row="3" Grid.Column="3" Content="R7: "/>
-				<Label Grid.Row="4" Grid.Column="0" Content="R8: "/>
-				<Label Grid.Row="4" Grid.Column="3" Content="R9: "/>
-				<Label Grid.Row="5" Grid.Column="0" Content="R10: "/>
-				<Label Grid.Row="5" Grid.Column="3" Content="R11: "/>
-				<Label Grid.Row="6" Grid.Column="0" Content="R12: "/>
-				<Label Grid.Row="6" Grid.Column="3" Content="R13: "/>
-				<Label Grid.Row="7" Grid.Column="0" Content="R14: "/>
-				<Label Grid.Row="7" Grid.Column="3" Content="R15: "/>
-
-				<!--reg value labels -->
-				<Label Grid.Row="0" Grid.Column="1" Content="000"/>
-				<Label Grid.Row="0" Grid.Column="4" Content="000"/>
-				<Label Grid.Row="1" Grid.Column="1" Content="000"/>
-				<Label Grid.Row="1" Grid.Column="4" Content="000"/>
-				<Label Grid.Row="2" Grid.Column="1" Content="000"/>
-				<Label Grid.Row="2" Grid.Column="4" Content="000"/>
-				<Label Grid.Row="3" Grid.Column="1" Content="000"/>
-				<Label Grid.Row="3" Grid.Column="4" Content="000"/>
-				<Label Grid.Row="4" Grid.Column="1" Content="000"/>
-				<Label Grid.Row="4" Grid.Column="4" Content="000"/>
-				<Label Grid.Row="5" Grid.Column="1" Content="000"/>
-				<Label Grid.Row="5" Grid.Column="4" Content="000"/>
-				<Label Grid.Row="6" Grid.Column="1" Content="000"/>
-				<Label Grid.Row="6" Grid.Column="4" Content="000"/>
-				<Label Grid.Row="7" Grid.Column="1" Content="000"/>
-				<Label Grid.Row="7" Grid.Column="4" Content="000"/>
-			</Grid>
+			<StackPanel Orientation="Horizontal">
+				<DataGrid Name="OddRegsDataGrid" ItemsSource="{Binding OddRegs}">
+				</DataGrid>
+				<DataGrid Name="EvenRegsDataGrid" ItemsSource="{Binding EvenRegs}">
+				</DataGrid>
+			</StackPanel>
 		</GroupBox>
 		<StackPanel>
-			<GroupBox Header="Instruction">
+			<GroupBox Header="Instruction" DataContext="{Binding CurrentInstruction}">
 				<StackPanel>
-					<TextBlock Margin="3" FontFamily="Courier New">11111111111111111111111111111</TextBlock>
+					<TextBlock Margin="3" FontFamily="Courier New" DataContext="{Binding Binary}">11111111111111111111111111111</TextBlock>
 					<TextBlock Margin="3" FontFamily="Courier New">_______7___6___5___4___3___21</TextBlock>
 					<TextBlock Margin="3" FontFamily="Courier New">_____lit_des_rPC__rB__rA_fun_</TextBlock>
 				</StackPanel>

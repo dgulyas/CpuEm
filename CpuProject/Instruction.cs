@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace cpuEm
+namespace CpuProject
 {
 	public class Instruction
 	{
@@ -71,19 +71,28 @@ namespace cpuEm
 			Binary += ToBinaryWithPadding(kOrA, keybOrAluWidth);
 		}
 
-		public string GetDecLine()
+		//returns a string that fits under the Binary string.
+		//The numbers should line up with the matching digits in the BinaryString.
+		public string DecLine
 		{
-			var line = "";
+			get
+			{
+				var line = "";
 
-			line += Literal.ToString().PadLeft(literalWidth);
-			line += DestReg.ToString().PadLeft(regWidth);
-			line += NewPcValue.ToString().PadLeft(regWidth);
-			line += RegB.ToString().PadLeft(regWidth);
-			line += RegA.ToString().PadLeft(regWidth);
-			line += Function.ToString().PadLeft(funcWidth);
-			line += KeybOrAlu.ToString().PadLeft(keybOrAluWidth);
+				line += Literal.ToString().PadLeft(literalWidth);
+				line += DestReg.ToString().PadLeft(regWidth);
+				line += NewPcValue.ToString().PadLeft(regWidth);
+				line += RegB.ToString().PadLeft(regWidth);
+				line += RegA.ToString().PadLeft(regWidth);
+				line += Function.ToString().PadLeft(funcWidth);
+				line += KeybOrAlu.ToString().PadLeft(keybOrAluWidth);
 
-			return line;
+				return line;
+			}
+			set
+			{
+				var a = value;
+			}
 		}
 
 		public string GetDescriptionLine()

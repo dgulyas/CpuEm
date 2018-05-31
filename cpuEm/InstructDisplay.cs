@@ -1,4 +1,5 @@
 ﻿using System;
+using CpuProject;
 
 namespace cpuEm
 {
@@ -21,7 +22,7 @@ namespace cpuEm
 			Console.SetCursorPosition(Location.columnNum, currentRow++);
 			Console.Write($"|{Instruct.Binary}|");
 			Console.SetCursorPosition(Location.columnNum, currentRow++);
-			Console.Write($"|{Instruct.GetDecLine()}|");
+			Console.Write($"|{Instruct.DecLine}|");
 			Console.SetCursorPosition(Location.columnNum, currentRow++);
 			Console.Write($"|{Instruct.GetDescriptionLine()}|");
 			Console.SetCursorPosition(Location.columnNum, currentRow);

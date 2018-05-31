@@ -56,9 +56,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\cpuEm\cpuEm.csproj">
+    <ProjectReference Include="..\cpuEm\CpuConsoleDisplay.csproj">
       <Project>{85fd2d1d-dccc-4b8a-85e1-231bce195c35}</Project>
-      <Name>cpuEm</Name>
+      <Name>CpuConsoleDisplay</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CpuProject\CpuProject.csproj">
+      <Project>{a8b6805b-f29b-4494-803e-b2632025ceec}</Project>
+      <Name>CpuProject</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
