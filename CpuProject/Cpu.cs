@@ -52,7 +52,7 @@ namespace CpuProject
 					Environment.Exit(0);
 				}
 				Regs[ci.DestReg] = ConsoleInput[0];
-				ConsoleInput.RemoveAt(0);
+				ConsoleInput.RemoveAt(0); //TODO: convert ascii char to ascii int like actual cpu does.
 			}
 
 			//If the destination reg was a special reg, write the result to the correct place.

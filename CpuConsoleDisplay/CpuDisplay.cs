@@ -2,7 +2,7 @@
 using System.Linq;
 using CpuProject;
 
-namespace cpuEm
+namespace CpuConsoleDisplay
 {
 	public class CpuDisplay
 	{

@@ -1,19 +1,17 @@
 ﻿using System.Windows;
-using cpuGui;
 using CpuProject;
 
-namespace CpuGui
+namespace CpuFormGui
 {
 	/// <summary>
 	/// Interaction logic for CpuView.xaml
 	/// </summary>
-	public partial class CpuView : Window
+	public partial class CpuForm : Window
 	{
 		public readonly Cpu CpuInstance;
 		public CpuModel CpuModel = new CpuModel();
 
-
-		public CpuView(Cpu cpu)
+		public CpuForm(Cpu cpu)
 		{
 			CpuInstance = cpu;
 
@@ -21,10 +19,8 @@ namespace CpuGui
 
 		}
 
-		public void TickAndUpdate()
+		public void Update()
 		{
-			CpuInstance.Tick();
-
 			for (int i = 0; i < CpuInstance.Regs.Count; i++)
 			{
 				var row = new RegDataGridRow
@@ -44,6 +40,19 @@ namespace CpuGui
 			}
 
 			CpuModel.CurrentInstruction = CpuInstance.GetCurrentInstruction();
+			//TODO: make the current instruction show up
+
+			if (ConsoleInput.Text.Length > 0)
+			{
+				CpuModel.ConsoleOutput += ConsoleInput.Text;
+				ConsoleInput.Text = "";
+			}
+		}
+
+		private void TickCpu(object sender, RoutedEventArgs e)
+		{
+			CpuInstance.Tick();
+			Update();
 		}
 
 	}

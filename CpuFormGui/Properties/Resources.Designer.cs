@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CpuGui.Properties
+namespace CpuFormGui.Properties
 {
 
 

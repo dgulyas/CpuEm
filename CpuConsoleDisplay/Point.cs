@@ -1,4 +1,4 @@
-﻿namespace cpuEm
+﻿namespace CpuConsoleDisplay
 {
 	public class Point
 	{

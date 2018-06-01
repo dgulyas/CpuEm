@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Runtime.Hosting;
 using NDesk.Options;
 
-namespace cpuEm
+namespace CpuConsoleDisplay
 {
 	class Options
 	{

@@ -1,7 +1,7 @@
 ﻿using System;
 using CpuProject;
 
-namespace cpuEm
+namespace CpuConsoleDisplay
 {
 	class InstructDisplay
 	{

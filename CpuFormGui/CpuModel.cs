@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using CpuProject;
 
-
-namespace cpuGui
+namespace CpuFormGui
 {
-	public class CpuModel
+	public class CpuModel // : INotifyPropertyChanged
 	{
 		public List<RegDataGridRow> OddRegs;
 		public List<RegDataGridRow> EvenRegs;
 
 		//This could just be an instruction, but I'm not sure how to bind to something inside an object
-		//inside the model.
+		//inside the model.     Update, lets see if this works.
 		public Instruction CurrentInstruction;
 
 		public string ConsoleOutput;
@@ -24,6 +24,13 @@ namespace cpuGui
 			ConsoleOutput = "";
 			ConsoleInput = "";
 		}
+
+		//public event PropertyChangedEventHandler PropertyChanged;
+
+		//protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+		//{
+		//	PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+		//}
 	}
 
 	public class RegDataGridRow

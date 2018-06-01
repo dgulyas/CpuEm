@@ -1,9 +1,10 @@
-﻿<Application x:Class="CpuGui.App"
+﻿<Application x:Class="Command.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:CpuGui"
-             StartupUri="MainWindow.xaml">
+             xmlns:local="clr-namespace:Command"
+             StartupUri="MainWindow.xaml"
+             Startup="App_OnStartup">
     <Application.Resources>
-         
+
     </Application.Resources>
 </Application>
