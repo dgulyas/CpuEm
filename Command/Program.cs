@@ -1,27 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows;
 using CpuProject;
 
-namespace cpuEm
+namespace Command
 {
-
-	//This class should be removed and replaced with the Command.Program class.
-	public class StartPoint
+	//The Command project deals with all the start up things. Parsing args, creating CPU's and loading programs into them, hooking GUIs onto them, etc.
+	class Program
 	{
 		static void Main(string[] args)
 		{
-
-
 			//TODO: Add argument parsing to read in a program from file.
 			var cpu = new Cpu();
 			cpu.LoadProgram(new List<string> { "00000111011001010100001100101" });
 
-			//var cpuDisplay = new cpuGui.CpuGui;
-			//cpuDisplay.ShowDial
-			////var cpuDisplay = new CpuDisplay();
-			////cpuDisplay.Print(cpu);
+			var cpuDisplay = new CpuGui.CpuView(cpu);
+			cpuDisplay.Show();
 			Console.ReadLine();
 		}
 
@@ -37,6 +31,5 @@ namespace cpuEm
 
 			return binaryProgram;
 		}
-
 	}
 }

@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using cpuGui;
 using CpuProject;
 
@@ -22,23 +9,28 @@ namespace CpuGui
 	/// </summary>
 	public partial class CpuView : Window
 	{
-		public readonly CpuModel CpuModel = new CpuModel();
+		public readonly Cpu CpuInstance;
+		public CpuModel CpuModel = new CpuModel();
 
 
-		public CpuView()
+		public CpuView(Cpu cpu)
 		{
+			CpuInstance = cpu;
+
 			InitializeComponent();
 
 		}
 
-		public void Update(Cpu cpu)
+		public void TickAndUpdate()
 		{
-			for (int i = 0; i < cpu.Regs.Count; i++)
+			CpuInstance.Tick();
+
+			for (int i = 0; i < CpuInstance.Regs.Count; i++)
 			{
 				var row = new RegDataGridRow
 				{
 					regName = $"r{i}",
-					regValue = cpu.Regs[i].ToString()
+					regValue = CpuInstance.Regs[i].ToString()
 				};
 
 				if (i % 2 == 0) //i is even
@@ -51,8 +43,7 @@ namespace CpuGui
 				}
 			}
 
-			CpuModel.CurrentInstruction = cpu.GetCurrentInstruction();
-			//cpu.
+			CpuModel.CurrentInstruction = CpuInstance.GetCurrentInstruction();
 		}
 
 	}
